@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Event</title>
+</head>
+<body>
+   <h3 id="h3" ondblclick="h3Event()">FSN</h3>
+   <p onmousemove="pEvent()">Farhan Sadik Nirjhor</p>
+   <button onclick="this.innerHTML = Date()"> Watch time!</button> <br> <br>
+   
+
+      <button id="dark"> Dark </button> &nbsp;
+      <button id="red">Red</button> &nbsp;
+      <button id="blue">Blue</button> &nbsp;
+   
+   <script type="text/javascript" charset="utf-8">
+   document.body.style.textAlign = 'center';
+   
+   document.querySelector('h3').style.border = '1px dashed red';
+   document.querySelector('p').style.padding = '10px';
+   document.querySelector('p').style.border = '1px dashed green';
+   
+//Add Event 
+   function h3Event(){
+      alert("This is h3 tag");
+   }
+    function pEvent(){
+document.querySelector('p').style.backgroundColor = 'grey';
+    }
+    
+// Add Event by JS    
+
+const darkButton = document.getElementById("dark");
+function darkMode(){
+   document.body.style.backgroundColor = 'black';
+   document.body.style.color = 'white';
+}
+
+darkButton.onclick = darkMode;
+darkButton.style.backgroundColor='black';
+darkButton.style.color='white';
+// Add Event Listener
+const redButton = document.getElementById("red");
+function redMode(){
+   document.body.style.backgroundColor = "red" ;
+   document.body.style.color = "cyan" ;
+}
+redButton.addEventListener("click",redMode);
+redButton.style.backgroundColor='red';
+// add Event Listener directly
+document.getElementById("blue").addEventListener('click', function (){
+   document.body.style.backgroundColor = 'blue';
+   document.body.style.color = 'yellow';
+});
+document.getElementById("blue").style.backgroundColor='blue';
+   </script>
+</body>
+</html>

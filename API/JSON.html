@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSON</title>
+</head>
+<body>
+  <h1>  JSON </h1>
+  <p>JavaScript Object Notation</p>
+  
+  <script>
+    const user = {
+      name: "farhan", 
+      roll: 302002,
+      address: { 
+        thana: "Batiaghata",
+        jela : "Khulna", 
+        country: "Bangladesh" 
+      },
+      subject: ["phycology", "mycology", "microbiology"]
+    }
+    
+    console.log("object:- ",user);
+    
+    const userJSON = JSON.stringify(user);
+    console.log("stringify:- ",userJSON);
+    
+    const userFromJSON = JSON.parse(userJSON);
+    console.log("parse:- ",userFromJSON);
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>DOM</title>
+</head>
+<body>
+   <main>
+         <p id="fsID">Farhan Sadik
+<span>Nirjhor</span>
+</p>
+   <h1 class="fsClass" title="Nirjhor">Nirjhor 1</h1>
+    <script type="text/javascript" charset="utf-8">
+    console.log("FS Nirjhor 1");
+    debugger; 
+    </script>
+<p class='fsQuery'> farhan sadik nirjhor</p>
+<h1 class="fsClass">Nirjhor 2</h1>
+<p class='fsQuery'> farhan sadik nirjhor</p>
+<h1 class="fsClass">Nirjhor 3</h1>
+<p class='fsQuery'> farhan sadik nirjhor</p>
+<h1 class="fsClass">Nirjhor 4</h1>
+<article>
+   <ol id="book-list">
+      <li>book-1</li>
+      <li>book-2</li>
+      <li>book-3</li>
+      <li>book-4</li>
+      <li>book-5</li>
+   </ol>
+</article>
+</main>
+
+
+<script type="text/javascript" charset="utf-8">
+
+// Get Element by ID
+   let pID = document.getElementById("fsID");
+      pID.style.color = 'slateblue' ;
+      pID.style.fontSize = '30px' ;
+      pID.style.backgroundColor = 'orange';
+      
+// Get Element by Class Name      
+      let h1Class = document.getElementsByClassName("fsClass");
+      for(let i = 0; i < h1Class.length; i++){
+         let element = h1Class[i];
+         element.style.backgroundColor = "Yellow" ;
+         element.style.color = 'red';
+         
+        element.innerHTML = "FS Nirjhor " + (i+1);
+        
+        document.body.style.backgroundColor = 'lightblue';
+      }
+  
+//Query Selector    
+    let pQuery = document.querySelector('.fsQuery');
+      pQuery.style.color = 'blue' ;
+      pQuery.style.fontFamily = 'monospace';
+//Set Attribute         
+         pQuery.setAttribute("align", "center");      
+
+//Query Selector All
+      let pQueryAll = document.querySelectorAll('.fsQuery');
+      for(let i = 0; i < pQueryAll.length; i++){
+        let element = pQueryAll[i];
+         element.style.backgroundColor = 'cyan';
+      }  
+      
+// Add Element 
+      const bookList = document.getElementById("book-list");
+      const book6 = document.createElement("li");
+      book6.innerHTML = "book-6";
+      bookList.appendChild(book6);
+</script>
+</body>
+</html>

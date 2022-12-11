@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    
+  </head>
+  <body >
+    <h1 id="alert"> Alert </h1> <br>
+    <h1 id="confirm"> Confirm </h1> <br>
+    <h1 id="prompt"> Prompt </h1>
+    <script type="text/javascript" charset="utf-8">
+    document.getElementById("alert").addEventListener("click", function(){
+      alert("Alert: Ok for true");
+    });
+    document.getElementById("confirm").addEventListener("click", function(){
+       confirm("Confirm: Ok for true & Cancel for false");
+    });
+    document.getElementById("prompt").addEventListener("click", function(){
+      prompt("Prompt: Write something");
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Bubble</title>
+   <style type="text/css" media="all">
+   *{text-align: center; }
+      section{background: lightblue;}
+      ul{background: lightgreen;
+         
+      }
+      li{background: yellow;
+         border: 1px solid red;
+      }
+      footer{height: 1000px;}
+      
+   </style>
+</head>
+<body>
+  <section id="section1">
+     <h3>Event Bubble Propagation</h3>
+     <ul id="ul1">
+       <li id="li0">List-0</li>
+       <li>List-1</li>
+       <li>List-2</li>
+       <li>List-3</li>
+       <li>List-4</li>
+     </ul>
+     <br>
+  </section>
+  
+   <section id="section2">
+     <h3>Event Bubble Delagate</h3>
+     <ul id="ul2">
+       <li class="li" id="li1"><b>List-1</b></li>
+       <li class="li" id="li2">List-2</li>
+       <li class="li" id="li3">List-3</li>
+       <li class="li" id="li4">List-4</li>
+       <li class="li" id="li5">List-5</li>
+     </ul>
+     <button id="addNew">Add New</button>
+     <br>
+  </section>
+ <footer></footer>
+  <script type="text/javascript" charset="utf-8">
+ // event bubble 
+     document.getElementById('li0').addEventListener('click',function(){
+        console.log('Clicked List-0') 
+        
+     });
+     document.getElementById('ul1').addEventListener('click',function(){
+        console.log('Clicked Order List') 
+        
+// stopPropagation        
+        event.stopPropagation();
+     });
+document.getElementById('section1').addEventListener('click',function(){
+   console.log('Clicked section') });
+   
+/*   
+//delegate / remove item
+
+var li = document.getElementsByClassName('li');
+for(let i = 0; i < li.length; i++){
+   let element = li[i];
+   element.addEventListener('click', function(event){
+      console.log(this,event.target,event.target.innerHTML);
+      console.log(event.target.parentNode);
+      event.target.parentNode.removeChild(event.target);
+   } ); 
+} */
+
+// Remove item from parent
+document.getElementById('ul2').addEventListener('click',function(event){
+   event.target.parentNode.removeChild(event.target);
+   console.log(event.target);
+}); 
+
+// add item
+document.getElementById('addNew').addEventListener('click', function (event){
+   var mainList = document.getElementById('ul2') ;
+var newItem = document.createElement('li');
+newItem.innerHTML = 'Newly Added';
+   mainList.appendChild(newItem);
+   newItem.setAttribute('class','li');
+});     
+
+/* (add item directly)
+
+document.getElementById('addNew').addEventListener('click',function(event){
+   document.getElementById('ul2').appendChild(document.createElement('li')).innerHTML = "Newly Added";
+});   */
+  </script>
+</body>
+</html>

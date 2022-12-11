@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JSON GET</title>
+  </head>
+  <body>
+    <h1>JSON Data</h1>
+    <h3>User Names</h3>
+    <ul id="user-names"></ul>
+    <br />
+    <h3>User Phones</h3>
+    <ul id="user-phone"></ul>
+    <script type="text/javascript" charset="utf-8">
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((json) => displayUser(json));
+      function displayUser(users) {
+        //User Names
+        const userNames = users.map((user) => user.username);
+        const nameUl = document.getElementById("user-names");
+        for (let i = 0; i < userNames.length; i++) {
+          userName = userNames[i];
+          const nameLi = document.createElement("li");
+          nameLi.innerText = userName;
+          nameUl.appendChild(nameLi);
+        }
+        // user-phone
+        const usersPhones = users.map((phones) => phones.phone);
+        phoneNumbers = usersPhones.map((userPhone) => {
+          const phoneLi = document.createElement("li");
+          phoneLi.innerText = userPhone;
+          const phoneUl = document.getElementById("user-phone");
+          phoneUl.appendChild(phoneLi);
+        });
+      }
+    </script>
+  </body>
+</html>

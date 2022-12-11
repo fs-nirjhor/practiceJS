@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title> shssjsjjd </title>
+<style>
+  body{ color: red;
+  }
+</style>    
+  </head>
+  <body> 
+  
+ <p class="">    body 
+    
+    body
+    
+    body</p>
+    <div id="alu"></div>
+   
+    <script type="text/javascript" charset="utf-8">
+     
+
+        (function (){
+
+            document.write("This is a self-invoking function")
+
+        })();
+
+    const alu = "30";
+    const result = " return alu + potol" ;
+   const aluPotol = new Function("potol",result);
+   document.getElementById('alu').innerHTML = aluPotol(30);
+
+
+        function* generateFunc(){
+
+            yield 1;
+
+            yield 2;
+
+            return 3;
+
+        }
+
+        let generator = generateFunc();
+
+        let one = generator.next();
+
+        
+
+        let three = generator.next();
+        let four = generator.next();
+        
+console.log(one);
+
+console.log(three);
+console.log(four);
+
+
+        console.log(JSON.stringify(one));
+
+        
+
+        console.log(JSON.stringify(three));
+        
+        function testing () {
+  console.log(2222);
+}
+console.log(1111);
+setTimeout(testing);
+console.log(3333);
+setInterval(()=>console.log(4444), 500);
+console.log(5555);
+    </script>
+  </body> 
+</html> 

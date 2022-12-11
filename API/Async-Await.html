@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Async Await</title>
+  </head>
+  <body>
+    <ol id="myList"></ol>
+    <script type="text/javascript" charset="utf-8">
+// Normal Way
+      /*function getData() {
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response => response.json())
+        .then(data => {
+          getName(data);
+          })
+      }*/
+// Async Await way
+      async function getData() {
+        const loadData = await fetch(
+          "https://jsonplaceholder.typicode.com/users"
+        );
+        const data = await loadData.json();
+        getName(data);
+      }
+      function getName(data) {
+        for (let i = 0; i < data.length; i++) {
+          const allData = data[i];
+          const li = document.createElement("li");
+          li.innerText = allData.name;
+          const ol = document.getElementById("myList");
+          ol.appendChild(li);
+        }
+      }
+      getData();
+    </script>
+  </body>
+</html>
